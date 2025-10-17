@@ -1,0 +1,128 @@
+:root {
+  --bg-color: #1a1a1a;
+  --card-color: #2a2a2a;
+  --primary-color: #003b72;
+  --secondary-color: #0056a3;
+  --text-color: #e0e0e0;
+  --border-color: #444;
+  --on-time-color: #28a745;
+  --late-color: #dc3545;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+}
+
+main {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--card-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+header {
+  text-align: center;
+}
+h1,
+h2 {
+  margin-top: 0;
+}
+
+h1 {
+  color: var(--secondary-color);
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+
+#form-tarefa button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: auto;
+  padding: 10px 20px;
+}
+
+input {
+  background-color: #333;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056a3;
+}
+
+.calcular-btn {
+  width: fit-content;
+  margin-top: 1rem;
+  background-color: var(--on-time-color);
+}
+
+.calcular-btn:hover {
+  background-color: #2dbe4d;
+}
+
+.task-list {
+  margin-top: 1rem;
+}
+
+.task-item,
+.result-item {
+  background-color: #333;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.result-item.late {
+  border-left-color: var(--late-color);
+}
+.result-item.on-time {
+  border-left-color: var(--on-time-color);
+}
+
+.late .lateness,
+.on-time .lateness {
+  font-weight: bold;
+}
+.late .lateness {
+  color: var(--late-color);
+}
+.on-time .lateness {
+  color: var(--on-time-color);
+}
