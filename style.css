@@ -89,11 +89,11 @@ button:hover {
 .calcular-btn {
   width: fit-content;
   margin-top: 1rem;
-  background-color: var(--on-time-color);
+  background-color: var(--primary-color);
 }
 
 .calcular-btn:hover {
-  background-color: #2dbe4d;
+  background-color: #0056a3;
 }
 
 .task-list {
