@@ -32,4 +32,46 @@ document.addEventListener('DOMContentLoaded', () => {
             taskListDiv.appendChild(taskElement);
         });
     }
+
+    calculateBtn.addEventListener('click', () => {
+        if (tasks.length === 0) return;
+
+        const sortedTasks = [...tasks].sort((a, b) => a.deadline - b.deadline);
+
+        let currentTime = 0;
+        let maxLateness = -Infinity; 
+        const schedule = [];
+
+        sortedTasks.forEach(task => {
+            const startTime = currentTime;
+            const finishTime = startTime + task.duration;
+            const lateness = finishTime - task.deadline;
+
+            schedule.push({ ...task, startTime, finishTime, lateness });
+
+            maxLateness = Math.max(maxLateness, lateness);
+            currentTime = finishTime; 
+        });
+
+        renderResults(schedule, maxLateness);
+    });
+
+    function renderResults(schedule, maxLateness) {
+        resultDiv.innerHTML = '';
+
+        const maxLatenessClass = maxLateness > 0 ? 'late' : 'on-time';
+        resultDiv.innerHTML = <h3>Atraso Máximo: <span class="${maxLatenessClass}">${maxLateness}h</span></h3>;
+
+        schedule.forEach((task, index) => {
+            const resultElement = document.createElement('div');
+            const latenessClass = task.lateness > 0 ? 'late' : 'on-time';
+            resultElement.className = result-item ${latenessClass};
+            resultElement.innerHTML = `
+                <h4>${index + 1}. ${task.name}</h4>
+                <p>Executar: <strong>${task.startTime}h</strong> &rarr; <strong>${task.finishTime}h</strong> | Prazo: ${task.deadline}h</p>
+                <p class="lateness">Atraso: ${task.lateness}h</p>
+            `;
+            resultDiv.appendChild(resultElement);
+        });
+    }
 })
