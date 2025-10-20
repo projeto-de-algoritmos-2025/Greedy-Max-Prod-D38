@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scheduler de Tarefas</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>Scheduler de Tarefas</h1>
-            <p>Minimizando o atraso máximo com o algoritmo Earliest Deadline First.</p>
-        </header>
+      <header>
+        <h1>Scheduler de Tarefas</h1>
+        <p>
+          Minimizando o atraso máximo com o algoritmo Earliest Deadline First.
+        </p>
+      </header>
 
-        <main>
-            <section class="card">
-                <h2>Adicionar Tarefa</h2>
-                <form id="form-tarefa">
-                    <input type="text" id="nome-tarefa" placeholder="Nome da Tarefa" required>
-                    <input type="number" id="duracao-tarefa" min="1" placeholder="Duração (horas)" required>
-                    <input type="number" id="prazo-tarefa" min="1" placeholder="Prazo (horas a partir de agora)" required>
-                    <button type="submit">Adicionar</button>
-                </form>
-            </section>
+      <main>
+        <section class="card">
+          <h2>Adicionar Tarefa</h2>
+          <form id="form-tarefa">
+            <input
+              type="text"
+              id="nome-tarefa"
+              placeholder="Nome da Tarefa"
+              required
+            />
+            <input
+              type="number"
+              id="duracao-tarefa"
+              min="1"
+              placeholder="Duração (horas)"
+              required
+            />
+            <input
+              type="number"
+              id="prazo-tarefa"
+              min="1"
+              placeholder="Prazo (horas a partir de agora)"
+              required
+            />
+            <button type="submit">Adicionar</button>
+          </form>
+        </section>
 
-            <section class="card">
-                <h2>Tarefas na Fila</h2>
-                <div id="lista-tarefas-pendentes" class="task-list"></div>
-                <button id="calcular-ordem" class="calcular-btn">Calcular Ordem Ótima</button>
-            </section>
+        <section class="card">
+          <h2>Tarefas na Fila</h2>
+          <div id="lista-tarefas-pendentes" class="task-list"></div>
+          <button id="calcular-ordem" class="calcular-btn">
+            Calcular Ordem Ótima
+          </button>
+        </section>
 
-            <section class="card">
-                <h2>Plano de Execução</h2>
-                <div id="resultado" class="task-list"></div>
-            </section>
-        </main>
+        <section class="card">
+          <h2>Plano de Execução</h2>
+          <div id="resultado" class="task-list"></div>
+        </section>
+      </main>
     </div>
-</body>
+  </body>
+
+  <script src="script.js"></script>
 </html>
