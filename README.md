@@ -20,14 +20,18 @@ Aplicação para ordenação de tarefas de acordo com o seu prazo final.
 
 ## Screenshots
 
+![PaginaInicial](./assets/tela_inicial.png)
+
+![Tarefas](./assets/tarefas.png)
 
 ## Vídeo Explicativo
 
 
 ## Instalação
 
-**Linguagem**: JavaScript<br>
+**Linguagem**: JavaScript, html, css
 
 ## Uso
 
+Disponível em: https://projeto-de-algoritmos-2025.github.io/Greedy-Max-Prod-D38/
 
