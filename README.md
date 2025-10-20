@@ -26,6 +26,7 @@ Aplicação para ordenação de tarefas de acordo com o seu prazo final.
 
 ## Vídeo Explicativo
 
+link: https://youtu.be/yJAY2slKGOA
 
 ## Instalação
 
